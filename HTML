@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My To-Do List</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    width: 350px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+  }
+
+  li:hover {
+    background: #e0f7fa;
+  }
+
+  button {
+    background: #ff6b6b;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #ff3b3b;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>My To-Do List</h2>
+  <input type="text" id="taskInput" placeholder="Add a new task...">
+  <ul id="taskList"></ul>
+</div>
+
+<script>
+  const taskInput = document.getElementById('taskInput');
+  const taskList = document.getElementById('taskList');
+
+  taskInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter' && taskInput.value.trim() !== '') {
+      addTask(taskInput.value.trim());
+      taskInput.value = '';
+    }
+  });
+
+  function addTask(task) {
+    const li = document.createElement('li');
+    li.textContent = task;
+
+    const removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Delete';
+    removeBtn.onclick = () => li.remove();
+
+    li.appendChild(removeBtn);
+    taskList.appendChild(li);
+  }
+</script>
+</body>
+</html>
