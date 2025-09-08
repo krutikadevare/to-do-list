@@ -1,0 +1,86 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body background */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+}
+
+/* Container styling */
+.container {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 360px;
+  text-align: center;
+}
+
+/* Heading */
+.container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input field */
+#taskInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Task list */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Task items */
+li {
+  background: #f0f0f0;
+  margin-bottom: 12px;
+  padding: 12px 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+li:hover {
+  background: #e0f7fa;
+}
+
+/* Delete button */
+button {
+  background: #ff6b6b;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #ff3b3b;
+}
+
+/* Optional: strike-through completed task */
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
